@@ -1,4 +1,4 @@
-# REACT REPOSITORY !Build Status(https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)]
+# REACT REPOSITORY [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
 
 Hey there!
 
