@@ -1,6 +1,6 @@
 On this branch - React-Apps, you will find categorized in proper folders, React applications.
 
-All you will have to do is to download the app you are interested in, then open directory with use of commander, and finally type `npm start` (be sure you need to have node.js installed).
+All you will have to do is to download the app you are interested in, then open directory with use of commander, and finally type `npm start` (kepp in mind, that you need to have node.js installed).
 
 --------------------------------------------------------
 
