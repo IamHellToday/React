@@ -1,3 +1,5 @@
+# REACT REPOSITORY [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)]
+
 Hey there!
 
 This is the master branch of my React Repository.
