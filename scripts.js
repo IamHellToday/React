@@ -1,20 +1,3 @@
-/*
-let element =
-    React.createElement('div', {},
-        React.createElement('h1', {}, 'Film list'),
-        React.createElement('ul', {},
-            React.createElement('li', {},
-                React.createElement('h2', {}, 'Lord of The  Rings'),
-                React.createElement('p', {}, 'Adventure movie')
-            ),
-            React.createElement('li', {},
-                React.createElement('h2', {}, 'Star Wars'),
-                React.createElement('p', {}, 'Galactic space opera')
-            )
-        )
-    );
-*/
-//Code refractoring below.
 
 let movies = [
     {
@@ -43,17 +26,50 @@ let movies = [
     },
 ];
 
-let moviesElements = movies.map(function(movie){
-    return React.createElement('li', {key: movie.id}, 
-        React.createElement('h2', {}, movie.title),
-        React.createElement('p', {}, movie.desc),
-        React.createElement('img', {src:movie.pic}),
-    );
+let Movie = movies.map(function(movie){
+    React.createClass({
+        propTypes: {
+            title: React.PropTypes.string.isRequired,
+            description: React.PropTypes.string.isRequired,
+            picture: React.PropTypes.object.isRequired
+        },
+        render: () => {
+            return (
+                React.createElement('div', {}, 
+                    React.createElement('h2', {}, movieTitle),
+                    React.createElement('p', {}, movieDescription),
+                    React.createElement('img', {}, moviePicture)
+                )
+            )
+        }
+    });
 });
 
-let element = 
-    React.createElement('div', {},
-        React.createElement('h1', {}, 'Film list'),
-        React.createElement('ul', {}, moviesElements)
-    );
-ReactDOM.render(element, document.getElementById('app'));
+let movieTitle = React.createClass({
+    propTypes: {
+        title: React.PropTypes.string.isRequired
+    },
+    render: () => {
+        return (React.createElement({key: movie.id}, `Title: ${this.props.movies.title}`))
+    }
+});
+
+let movieDescription = React.createClass({
+    propTypes: {
+        description: React.PropTypes.string.isRequired
+    },
+    render: () => {
+        return (React.createElement({key: movie.id}, `Description: ${this.props.movies.desc}`))
+    }
+});
+
+let moviePicture = React.createClass({
+    propTypes: {
+        picture: React.PropTypes.object.isRequired
+    },
+    render: () => {
+        return (React.createElement({key: movie.id, src: this.props.movies.pic}))
+    }
+});
+
+ReactDOM.render(Movie, document.getElementById('app'));
