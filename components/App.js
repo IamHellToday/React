@@ -1,5 +1,5 @@
-let App = React.createClass({
-    render: () => {
+const App = React.createClass({
+    render() {
         return (
             React.createElement('div', {className: 'app'},
                 React.createElement(ContactForm, {contact: contactForm}),
@@ -9,13 +9,15 @@ let App = React.createClass({
     }
 });
 
-let contactForm = {
+
+
+const contactForm = {
     firstName: '',
     lastName: '',
     email: ''
 };
 
-let contacts = [ 
+const contacts = [ 
     {
         id: 1,
         firstName: 'Tomek',

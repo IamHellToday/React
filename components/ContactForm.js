@@ -1,8 +1,8 @@
-let ContactForm = React.createClass({
+const ContactForm = React.createClass({
     propTypes: {
         contact: React.PropTypes.object.isRequired
     },
-    render: () => {
+    render(){
         return (
             React.createElement('form', {className: 'contactForm'}, 
                 React.createElement('input', {
