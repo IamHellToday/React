@@ -6,12 +6,34 @@ let App = React.createClass({
             gif: {}
         };
     },
+    getGif(searchTerm, callback){
+        let url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                let data = JSON.parse(xhr.responseText).data;
+                    let giff = {
+                        url: data.fixed_width_downsampled_url,
+                        sourceUrl: data.url
+                    };
+                    callback(gif);
+            }
+        };
+        xhr.send();
+    },
     searchHandler(searchTerm) {
         this.setState({
             loading: true
         });
-        this.getGif
-    }
+        this.getGif(searchTerm, function(gif) {
+            this.setState({
+                loading: false,
+                gif: gif,
+                searchTerm: searchTerm
+            });
+        }.bind(this));
+    },
     render(){
         let styles = {
         margin: '0 auto',
