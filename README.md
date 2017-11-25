@@ -8,10 +8,7 @@ In creating this repository I have adopted same rule, as in previous repositorie
 
 Each branch, represents simple projects.
 
-However, you can find here also `React-Apps` branch. 
-
-This branch is kind of self-repository for all my bigger than average projects, made with the use of React.
-
 --------------------------------------------------------
 
-- `React-Apps` -> Checkout this branch to see some real deal React projects. `STILL UNDER DEVELOPMENT`. 
+- `to-do-list` -> Be aware that you need to have `Webpack` installed to run it. Run by `npm start`.
+- `gif-search-app` -> Wanna search a cat gifs in `giphy`? Thats why you need it for. Run by `npm start`. You will host own server. 
