@@ -1,10 +1,10 @@
 const Search = React.createClass({
     getInitialState() {
         return {
-            searchTerm = ''
-        }
+            searchTerm: ''
+        };
     },
-    changeHandler = (event) => {
+    changeHandler: (event) => {
         let searchTerm = event.target.value;
         this.setState({
             searchTerm: searchTerm
@@ -13,7 +13,7 @@ const Search = React.createClass({
             this.props.onSearch(searchTerm);
         }
     },
-    keyUpHandler = (event) => {
+    keyUpHandler: (event) => {
         if (event.keyCode === 13) {
             this.props.onSearch(this.state.searchTerm);
         }

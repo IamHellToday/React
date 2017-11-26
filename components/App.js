@@ -7,13 +7,13 @@ let App = React.createClass({
         };
     },
     getGif(searchTerm, callback){
-        let url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
+        let url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchTerm;
         let xhr = new XMLHttpRequest();
         xhr.open('GET', url);
         xhr.onload = function () {
             if (xhr.status === 200) {
                 let data = JSON.parse(xhr.responseText).data;
-                    let giff = {
+                    let gif = {
                         url: data.fixed_width_downsampled_url,
                         sourceUrl: data.url
                     };
@@ -41,7 +41,7 @@ let App = React.createClass({
         width: '90%'
         };
         return(
-            <div styles={style}>
+            <div style={styles}>
                 <h1>GIF Search</h1>
                 <p>Search your gif on <a href='http://giphy.com'>giphy</a>Press enter for downloading another ones</p>
                 <Search 
